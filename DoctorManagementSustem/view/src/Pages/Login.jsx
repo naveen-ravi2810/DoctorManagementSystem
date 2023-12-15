@@ -7,12 +7,21 @@ export const Login = () => {
     const [Role, setRole] = useState('')
     async function handleSubmit(event){
         event.preventDefault()
-        // const response = await fetch('/login',{
-        //     method: 'POST',
-        //     body : JSON.stringify({'name':Name, 'password':Password, 'role':Role})
-        // })
-        navigate('/dashboard',{replace:true})
-        console.log(Name,Password,Role)
+        const response = await fetch('/login',{
+            method: 'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body : JSON.stringify({'name':Name, 'password':Password, 'role':Role})
+        })
+        const data = await response.json()
+        if(data.status){
+            navigate('/dashboard',{replace:true})
+        }
+        else{
+            alert(data.message)
+            console.log(Name,Password,Role)
+        }
     }
   return (
     <div className='h-screen flex justify-center items-center'>
@@ -30,9 +39,9 @@ export const Login = () => {
                     <label className='text-2xl' htmlFor="role">Role</label>
                     <select name="Role" defaultValue='' onChange={(e)=>setRole(e.target.value)} required>
                         <option value="">Select</option>
-                        <option value="Patient">Patient</option>
-                        <option value="Doctor">Doctor</option>
-                        <option value="Admin">Admin</option>
+                        <option value="patient">Patient</option>
+                        <option value="doctor">Doctor</option>
+                        <option value="admin">Admin</option>
                     </select>
                     {/* <div><input type="radio" name='usertype' placeholder='User' onChange={(e)=>setRole(e.target.value)} required/> User</div>
                     <div><input type="radio" name='usertype' placeholder='Doctor' onChange={(e)=>setRole(e.target.value)} required/> Doctor</div>

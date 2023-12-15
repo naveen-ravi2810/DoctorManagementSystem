@@ -1,6 +1,8 @@
 from flask import Flask
 from flask_restful import Api
 from flask_cors import CORS
+import os
+from Models.Tables import cur,conn
 from Sources.Users import LoginResource, RegisterResource
 from Sources.Doctors import DoctorResource, DoctorsResource
 
@@ -15,3 +17,4 @@ api.add_resource(DoctorResource,'/doctor/<string:id>')
 
 if __name__ == "__main__":
     app.run(debug=True)
+

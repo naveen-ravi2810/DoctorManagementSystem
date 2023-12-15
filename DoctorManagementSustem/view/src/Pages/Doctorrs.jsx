@@ -8,12 +8,12 @@ export const Doctorrs = () => {
   return (
     <div>
         <div>
-            <p className='uppercase text-center text-4xl underline pt-10'>List of doctors</p>
+            <p className='uppercase text-center text-4xl pt-10 text-green-600 pb-10'>List of doctors</p>
         </div>
-        <div className='flex justify-center'>
-            <div className='text-center'>
+        <div className='flex justify-center '>
+            <div className='text-center grid grid-cols-2'>
                 {/* Doc 1 */}
-                <div id="doc1" className='flex items-center gap-3 pb-10'>
+                <div id="doc1" className='flex items-center px-10 gap-3 pb-10'>
                     <img className=' w-96 h-96' src={MaleDoc1} alt="" />
                     <div>
                         <div className='grid-cols-2 grid p-1'>
@@ -24,7 +24,7 @@ export const Doctorrs = () => {
                     </div>
                 </div>
                 {/* Doc 2 */}
-                <div id="doc2" className='flex items-center gap-3 pb-10'>
+                <div id="doc2" className='flex items-center px-10 gap-3 pb-10'>
                     <img className=' w-96 h-96' src={FeMaleDoc1} alt="" />
                     <div>
                         <div className='grid-cols-2 grid p-1'>
@@ -35,7 +35,7 @@ export const Doctorrs = () => {
                     </div>
                 </div>
                 {/* doc3 */}
-                <div id="doc2" className='flex items-center gap-3 pb-10'>
+                <div id="doc2" className='flex items-center px-10 gap-3 pb-10'>
                     <img className=' w-96 h-96' src={MaleDoc2} alt="" />
                     <div>
                         <div className='grid-cols-2 grid p-1'>
@@ -46,7 +46,7 @@ export const Doctorrs = () => {
                     </div>
                 </div>
                 {/* Doc 4 */}
-                <div id="doc2" className='flex items-center gap-3 pb-10'>
+                <div id="doc2" className='flex items-center px-10 gap-3 pb-10'>
                     <img className=' w-96 h-96' src={FeMaleDoc2} alt="" />
                     <div>
                         <div className='grid-cols-2 grid p-1'>

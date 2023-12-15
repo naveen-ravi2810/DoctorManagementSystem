@@ -6,11 +6,16 @@ import { Doctorrs } from "./Pages/Doctorrs"
 import { AppointmentPage } from "./Pages/AppointmentPage"
 import { OnAppointments } from "./Pages/OnAppointments"
 import { Navbar } from "./Components/Navbar"
+import { PatientDetails } from "./Pages/PatientDetails"
+import { Logout } from "./Components/Logout"
+import { Feedback } from "./Pages/Feedback"
+import { PageNotFound } from "./Pages/PageNotFound"
 
 export default function App() {
   return (
     <BrowserRouter>
     <Navbar/>
+    <Logout/>
       <Routes>
         <Route path="/" Component={Home} />
         <Route path="/login" Component={Login} />
@@ -18,6 +23,9 @@ export default function App() {
         <Route path="/doctors" Component={Doctorrs}/>
         <Route path="/appointment" Component={OnAppointments}/>
         <Route path="/book/:name" Component={AppointmentPage}/>
+        <Route path="/patients" Component={PatientDetails}/>
+        <Route path="/feedback" Component={Feedback}/>
+        <Route path="*" Component={PageNotFound}/>
       </Routes>
     </BrowserRouter>
   )

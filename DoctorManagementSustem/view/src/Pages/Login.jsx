@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import LoginImage from './../Image/LoginImage.png'
 export const Login = () => {
     const navigate = useNavigate()
     const [Name, setName] = useState('')
@@ -16,7 +17,15 @@ export const Login = () => {
         })
         const data = await response.json()
         if(data.status){
-            navigate('/dashboard',{replace:true})
+            localStorage.setItem('isLoggedIn',true)
+            if (Role === 'doctor' || Role === "patient"){
+                navigate('/dashboard',{replace:true})
+            }
+            else{
+                navigate('/patients',{
+                    replace:true
+                })
+            }
         }
         else{
             alert(data.message)
@@ -24,9 +33,14 @@ export const Login = () => {
         }
     }
   return (
-    <div className='h-screen flex justify-center items-center'>
+    <div className='h-screen flex items-center'>
+        <div>
+            <img src={LoginImage} alt='img'/>
+        </div>
         <div className='p-3 flex justify-between'>
             <form className='' onSubmit={handleSubmit}>
+                <p className='text-2xl text-center'>View your Doctors...</p>
+                <p className='text-2xl text-center pb-10'>By Login</p>
                 <div className='flex gap-3 pt-2'>
                     <label className='text-2xl' htmlFor="username">UserName</label>
                     <input className='border-[1px] border-green-800 p-2' type="text" name='username' onChange={(e)=>setName(e.target.value)} required/>

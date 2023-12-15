@@ -4,8 +4,8 @@ import os
 try :
     if not os.path.isfile('DoctorManagementSystem.db'):
         conn = sqlite3.connect("DoctorManagementSystem.db",check_same_thread=False)
-        cur = conn.cursor()
         conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
         cur.execute(
             "CREATE TABLE IF NOT EXISTS USERS (user_id INTEGER PRIMARY KEY AUTOINCREMENT, user_name TEXT not null, password TEXT not null, email TEXT not null, role TEXT not null)")
         cur.execute(
@@ -27,8 +27,8 @@ try :
         print("DB init")
     else:
         conn = sqlite3.connect("DoctorManagementSystem.db", check_same_thread=False)
-        cur = conn.cursor()
         conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
 
 except Exception as e:
     print("Database Error",f'{e}')

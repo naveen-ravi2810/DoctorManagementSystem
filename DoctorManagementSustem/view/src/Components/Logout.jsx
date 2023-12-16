@@ -10,7 +10,7 @@ export const Logout = () => {
     }
   return (
     <div>
-        {localStorage.getItem('isLoggedIn') ?
+        {!localStorage.getItem('isLoggedIn') ?
         <button onClick={()=>btn_logout()} className='fixed bottom-10 right-0'>Logout</button>
         :
         <button className='fixed bottom-10 right-0'> </button>    

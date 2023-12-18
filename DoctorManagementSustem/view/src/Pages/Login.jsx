@@ -33,11 +33,11 @@ export const Login = () => {
         }
     }
   return (
-    <div className='h-screen flex items-center'>
-        <div>
-            <img src={LoginImage} alt='img'/>
+    <div className=' items-center'>
+        <div className='fixed w-full'>
+            <img className='w-[100%] h-[90%] ' src={LoginImage} alt='img'/>
         </div>
-        <div className='p-3 flex justify-between'>
+        <div className='p-3 h-screen relative flex justify-center items-center'>
             <form className='' onSubmit={handleSubmit}>
                 <p className='text-2xl text-center'>View your Doctors...</p>
                 <p className='text-2xl text-center pb-10'>By Login</p>

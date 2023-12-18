@@ -1,14 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
+import { json } from 'react-router-dom'
 
 export const PatientDetails = () => {
-    const [Patients, setPatients] = useState([
-        {'id':1, "name":"Xyz", "Doc":"Mary Smith", "type":"Fever"},
-        {'id':2, "name":"Pqr", "Doc":"Bob Johnson", "type":"Cough"},
-        {'id':3, "name":"Lmn", "Doc":"Alice Brown", "type":"Back Pain"},
-        {'id':4, "name":"Wxy", "Doc":"Sam Wilson", "type":"Fatigue"},
-        {'id':5, "name":"Mno", "Doc":"Eva Miller", "type":"Sore Throat"},
-    ])
+    const [Patients, setPatients] = useState()
+    const [IsFetching, setIsFetching] = useState(true)
+    console.log(Patients)
     const [PatientUpdate, setPatientUpdate] = useState({
         id:"10",
         name:"",
@@ -21,8 +18,17 @@ export const PatientDetails = () => {
             [event.target.name] : event.target.value
         })
     }
-    function addPatient(event){
+    async function addPatient(event){
         event.preventDefault()
+        const response = await fetch('/patients',{
+            method:'POST',
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify(PatientUpdate)
+        })
+        const data = await response.json()
+        if (data.status){
+            alert(data.message)
+        }
         setPatients((prePatients) => [...prePatients, PatientUpdate])
         setPatientUpdate({
             id:[PatientUpdate.id]+1,
@@ -30,6 +36,24 @@ export const PatientDetails = () => {
         Doc:"",
         type:""})
     }
+
+    async function getPatients(){
+        try{
+            const response = await fetch('/patients')
+            const data = await response.json()
+            if (data.status){
+                console.log("first")
+                setPatients(data.patients)
+                setIsFetching(false)
+            }
+        } catch (error){
+            console.log(error)
+        }
+    }
+    useEffect(()=>{
+        getPatients()
+    },[])
+
   return (
     <div>
         <div>
@@ -57,9 +81,17 @@ export const PatientDetails = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {Patients.map((patient, index)=>(
-                        <tr key={index}><td>{patient.id}</td><td>{patient.name}</td><td>{patient.Doc}</td><td>{patient.type}</td></tr>
-                    ))}
+                    {IsFetching ? 
+                    <>Loading</>:
+                    <>{Patients.map((patient, index)=>(
+                        <tr key={index}>
+                            <td>{patient.patient_id}</td>
+                            <td>{patient.patient_name}</td>
+                            <td>{patient.doctor_id}</td>
+                            <td>{patient.description}</td>
+                        </tr>
+                    ))}</>
+                    }
                 </tbody>
             </table>
         </div>

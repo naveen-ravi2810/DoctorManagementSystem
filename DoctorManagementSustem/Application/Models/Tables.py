@@ -4,6 +4,7 @@ import os
 try :
     if not os.path.isfile('DoctorManagementSystem.db'):
         conn = sqlite3.connect("DoctorManagementSystem.db",check_same_thread=False)
+        # conn.row_factory = sqlite3.Row
         conn.row_factory = sqlite3.Row
         cur = conn.cursor()
         cur.execute(

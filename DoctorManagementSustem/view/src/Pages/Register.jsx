@@ -4,17 +4,18 @@ import LoginImage from './../Image/LoginImage.png'
 export const Register= () => {
     const navigate = useNavigate()
     const [Name, setName] = useState('')
+    const [Email, setEmail] = useState('')
     const [Password, setPassword] = useState('')
     const [ConfirmPassword, setConfirmPassword] = useState('')
     const [Role, setRole] = useState('')
     async function handleSubmit(event){
         event.preventDefault()
-        const response = await fetch('/Register',{
+        const response = await fetch('/register',{
             method: 'POST',
             headers:{
                 'Content-Type':'application/json'
             },
-            body : JSON.stringify({'name':Name, 'password':Password, 'confirmpassword':ConfirmPassword ,'role':Role})
+            body : JSON.stringify({'name':Name, 'email':Email, 'password':Password, 'confirmpassword':ConfirmPassword ,'role':Role})
         })
         const data = await response.json()
         if(data.status){
@@ -48,6 +49,10 @@ export const Register= () => {
                 <div className='flex gap-24 pt-2'>
                     <label className='text-2xl' htmlFor="username">UserName</label>
                     <input className='border-[2px] border-green-800 p-2' type="text" name='username' onChange={(e)=>setName(e.target.value)} required/>
+                </div> 
+                <div className='flex gap-40 pt-2'>
+                    <label className='text-2xl' htmlFor="email">Email</label>
+                    <input className='border-[2px] border-green-800 p-2' type="email" name='email' onChange={(e)=>setEmail(e.target.value)} required/>
                 </div>
                 <div className='flex gap-28 pt-2'>
                     <label className='text-2xl' htmlFor="password">Password</label>
@@ -70,8 +75,8 @@ export const Register= () => {
                     <div><input type="radio" name='usertype' placeholder='Patient' onChange={(e)=>setRole(e.target.value)} required/> Patient</div> */}
                 </div>
                 <div className='flex justify-center pt-9'>
-                    <input className='border-[3px] border-green-600 text-white bg-green-500 p-2 text-xl rounded-lg hover:animate-pulse mr-4' type="submit" value="Login  " />
-                    <input className='border-[3px] border-green-600 text-white bg-green-500 p-2 text-xl rounded-lg hover:animate-pulse ' type="submit" value="New?Register" />
+                    {/* <input className='border-[3px] border-green-600 text-white bg-green-500 p-2 text-xl rounded-lg hover:animate-pulse mr-4' type="submit" value="Login  " /> */}
+                    <input className='border-[3px] border-green-600 text-white bg-green-500 p-2 text-xl rounded-lg hover:animate-pulse ' type="submit" value="Register" />
                 </div>
             </form>
             </div>

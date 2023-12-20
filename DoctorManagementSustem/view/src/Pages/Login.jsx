@@ -66,11 +66,16 @@ export const Login = () => {
                 </div>
                 <div className='flex justify-center pt-9'>
                     <input className='border-[3px] border-green-600 text-white bg-green-500 p-2 text-xl rounded-lg hover:animate-pulse mr-4' type="submit" value="Login  " />
-                    <input className='border-[3px] border-green-600 text-white bg-green-500 p-2 text-xl rounded-lg hover:animate-pulse ' type="submit" value="New?Register" />
+                    {/* <input className='border-[3px] border-green-600 text-white bg-green-500 p-2 text-xl rounded-lg hover:animate-pulse ' type="submit" value="New?Register" /> */}
+                
                 </div>
+                
             </form>
+           
             </div>
+            
         </div>
+        
         </div>
     </div>
   )

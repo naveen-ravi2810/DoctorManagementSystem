@@ -1,7 +1,7 @@
 from flask import jsonify, request
 from flask_restful import Resource
 
-from Models.Tables import cur
+from Models.Tables import cur,conn
 from flask_jwt_extended import create_access_token
 
 class LoginResource(Resource):
@@ -22,4 +22,20 @@ class LoginResource(Resource):
 
 class RegisterResource(Resource):
     def post(self):
-        return jsonify({"status": True})
+        try:
+            data = request.get_json()
+            print(data)
+            '''
+            USERS (user_id INTEGER PRIMARY KEY AUTOINCREMENT, user_name TEXT not null, password TEXT no null, email TEXT not null, role TEXT not null)
+            '''
+            name = data['name']
+            password = data['password']
+            email = data['email']
+            role = data['role']
+            query = "INSERT INTO USERS(user_name, password, email, role) values(?,?,?,?)"
+            values = (name, password, email, role)
+            cur.execute(query, values)
+            conn.commit()
+            return jsonify({"status": True})
+        except Exception as e:
+            return jsonify({'status':False})

@@ -1,19 +1,20 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import LoginImage from './../Image/LoginImage.png'
-export const Login = () => {
+export const Register= () => {
     const navigate = useNavigate()
     const [Name, setName] = useState('')
     const [Password, setPassword] = useState('')
+    const [ConfirmPassword, setConfirmPassword] = useState('')
     const [Role, setRole] = useState('')
     async function handleSubmit(event){
         event.preventDefault()
-        const response = await fetch('/login',{
+        const response = await fetch('/Register',{
             method: 'POST',
             headers:{
                 'Content-Type':'application/json'
             },
-            body : JSON.stringify({'name':Name, 'password':Password, 'role':Role})
+            body : JSON.stringify({'name':Name, 'password':Password, 'confirmpassword':ConfirmPassword ,'role':Role})
         })
         const data = await response.json()
         if(data.status){
@@ -29,7 +30,7 @@ export const Login = () => {
         }
         else{
             alert(data.message)
-            console.log(Name,Password,Role)
+            console.log(Name,Password,ConfirmPassword, Role)
         }
     }
   return (
@@ -39,18 +40,22 @@ export const Login = () => {
         </div>
         
         <div className='p-3 h-screen relative flex justify-center items-center'>
-        <div className='bg-green-50 rounded-lg p-12 shadow-md '>
+        <div className='bg-green-50 rounded-lg p-12 shadow-md'>
         <div className='bg-white rounded-lg p-12 shadow-md'>
             <form className='' onSubmit={handleSubmit}>
                 {/* <p className='text-2xl text-center'>View your Doctors...</p>
                 <p className='text-2xl text-center pb-10'>By Login</p> */}
-                <div className='flex gap-3 pt-2'>
-                    <label className='text-2xl ' htmlFor="username">UserName</label>
+                <div className='flex gap-24 pt-2'>
+                    <label className='text-2xl' htmlFor="username">UserName</label>
                     <input className='border-[2px] border-green-800 p-2' type="text" name='username' onChange={(e)=>setName(e.target.value)} required/>
                 </div>
-                <div className='flex gap-6 pt-2'>
+                <div className='flex gap-28 pt-2'>
                     <label className='text-2xl' htmlFor="password">Password</label>
                     <input className='border-[2px] border-green-800 p-2' type="password" name='passowrd' onChange={(e)=>setPassword(e.target.value)} required/>
+                </div>
+                <div className='flex gap-7 pt-2'>
+                    <label className='text-2xl' htmlFor="confirmpassword">ConfirmPassword</label>
+                    <input className='border-[2px] border-green-800 p-2' type="confirmpassword" name='confirmpassowrd' onChange={(e)=>setConfirmPassword(e.target.value)} required/>
                 </div>
                 <div className='flex gap-3 justify-center pt-4'>
                     <label className='text-2xl' htmlFor="role">Role</label>

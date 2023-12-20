@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from "./Pages/Home"
 import { Login } from "./Pages/Login"
+import { Register } from "./Pages/Register"
 import { Dashboard } from "./Pages/Dashboard"
 import { Doctorrs } from "./Pages/Doctorrs"
 import { AppointmentPage } from "./Pages/AppointmentPage"
@@ -19,6 +20,7 @@ export default function App() {
       <Routes>
         <Route path="/" Component={Home} />
         <Route path="/login" Component={Login} />
+        <Route path="/Register" Component={Register} />
         <Route path="/dashboard" Component={Dashboard}/>
         <Route path="/doctors" Component={Doctorrs}/>
         <Route path="/appointment" Component={OnAppointments}/>

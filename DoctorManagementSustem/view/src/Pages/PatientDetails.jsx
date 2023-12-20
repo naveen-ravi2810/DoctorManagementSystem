@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
+import LoginImage from './../Image/LoginImage.png'
 import { json } from 'react-router-dom'
 
 export const PatientDetails = () => {
@@ -55,11 +56,18 @@ export const PatientDetails = () => {
     },[])
 
   return (
-    <div>
+
+        <div>
+        
+
         <div>
             <p className='text-center text-3xl text-green-600 pt-10'>Patients</p>
-        </div>
-        <div className='flex justify-center py-10 '>
+            
+        </div>     
+        <div className='flex justify-center py-14 '>
+            
+        <div className='bg-green-100 rounded-lg p-12 shadow-md'>
+        <div className='bg-white rounded-t-lg p-12 shadow-md'>
             <form action="" onSubmit={addPatient}>
                 Patient Name <br />
                 <input className='border-[1px] border-green-800 p-1' value={PatientUpdate.name} onChange={updatePatientDetails} name='name' type="text" required autoFocus/> <br /> <br />
@@ -70,8 +78,14 @@ export const PatientDetails = () => {
                 <input className='border-2 p-2 rounded hover:cursor-pointer bg-green-500 hover:bg-green-900 hover:text-white' type="submit" value="Add patient" />
             </form>
         </div>
+        </div>
+        </div>
         <div>
+        
+       
             <table>
+            <div className='bg-green-100 rounded-lg p-12 shadow-md'>
+            <div className='bg-white rounded-lg p-12 shadow-md'>
                 <thead>
                     <tr>
                             <td>S.No</td>
@@ -93,8 +107,10 @@ export const PatientDetails = () => {
                     ))}</>
                     }
                 </tbody>
+                </div>
+                </div>
             </table>
-        </div>
+            </div>
     </div>
   )
 }

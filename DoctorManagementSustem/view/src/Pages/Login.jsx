@@ -34,9 +34,9 @@ export const Login = () => {
     }
   return (
     <div className=' items-center'>
-        <div className='fixed w-full'>
-            <img className='w-[100%] h-[90%] ' src={LoginImage} alt='img'/>
-        </div>
+    <div className='fixed w-full'>
+        <img className='w-[100%] h-[90%] ' src={LoginImage} alt='img'/>
+    </div>
         
         <div className='p-3 h-screen relative flex justify-center items-center'>
         <div className='bg-green-50 rounded-lg p-12 shadow-md '>

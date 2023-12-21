@@ -11,6 +11,8 @@ import { PatientDetails } from "./Pages/PatientDetails"
 import { Logout } from "./Components/Logout"
 import { Feedback } from "./Pages/Feedback"
 import { PageNotFound } from "./Pages/PageNotFound"
+import { Booking } from "./Pages/booking"
+
 
 export default function App() {
   return (
@@ -27,6 +29,7 @@ export default function App() {
         <Route path="/book/:name" Component={AppointmentPage}/>
         <Route path="/patients" Component={PatientDetails}/>
         <Route path="/feedback" Component={Feedback}/>
+        <Route path="/booking" Component={Booking}/>
         <Route path="*" Component={PageNotFound}/>
       </Routes>
     </BrowserRouter>

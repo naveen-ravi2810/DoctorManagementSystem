@@ -12,6 +12,7 @@ import { Logout } from "./Components/Logout"
 import { Feedback } from "./Pages/Feedback"
 import { PageNotFound } from "./Pages/PageNotFound"
 import { Booking } from "./Pages/booking"
+import { DoctorProfile } from "./Pages/DoctorProfile"
 
 
 export default function App() {
@@ -31,6 +32,7 @@ export default function App() {
         <Route path="/feedback" Component={Feedback}/>
         <Route path="/booking" Component={Booking}/>
         <Route path="*" Component={PageNotFound}/>
+        <Route path="/DoctorProfile" Component={DoctorProfile}/>
       </Routes>
     </BrowserRouter>
   )

@@ -14,9 +14,16 @@ export const AppointmentPage = () => {
           </Link>
         </p>
       </div>
+      <div className='text-center pt-4'>
+          <Link to={'/DoctorProfile'} className='text-blue-500 hover:underline'>
+            View {name}'s Profile
+          </Link>
+
+        
       <form action=''>
         {/* Your form contents go here */}
       </form>
+    </div>
     </div>
   );
 };

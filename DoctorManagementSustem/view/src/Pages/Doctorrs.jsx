@@ -22,6 +22,7 @@ export const Doctorrs = () => {
                             <p className='px-2 font-bold'>Name: </p><p className='px-2'>John Doe</p>
                             <p className='px-2 font-bold'>Specialist: </p><p className='px-2'> Heart</p>
                             <p className='px-2 font-bold'>Experience: </p><p className='px-2'> 17yrs</p>
+                            <p className='px-2 font-bold'>Ratings: </p><p className='px-2'> 4.2 Stars</p>
                         </div>
                         <p><Link className='bg-green-600 text-white text-center p-2 hover:bg-green-900'  to='/book/JohnDoe'>Book an Appointment</Link></p>
                     </div>
@@ -34,6 +35,7 @@ export const Doctorrs = () => {
                             <p className='px-2 font-bold'>Name: </p><p className='px-2'>Marry</p>
                             <p className='px-2 font-bold'>Specialist: </p><p className='px-2'>Skin</p>
                             <p className='px-2 font-bold'>Experience: </p><p className='px-2'> 9yrs</p>
+                            <p className='px-2 font-bold'>Ratings: </p><p className='px-2'> 4.3 Stars</p>
                         </div>
                         <p><Link className='bg-green-600 text-white text-center p-2 hover:bg-green-900' to='/book/marry'>Book an Appointment</Link></p>
                     </div>
@@ -46,6 +48,7 @@ export const Doctorrs = () => {
                             <p className='px-2 font-bold'>Name: </p><p className='px-2'>Arun</p>
                             <p className='px-2 font-bold'>Specialist: </p><p className='px-2'>Child</p>
                             <p className='px-2 font-bold'>Experience: </p><p className='px-2'> 8yrs</p>
+                            <p className='px-2 font-bold'>Ratings: </p><p className='px-2'> 4.0 Stars</p>
 
                         </div>
                         <p><Link className='bg-green-600 text-white text-center p-2 hover:bg-green-900' to='/book/arun' >Book an Appointment</Link></p>
@@ -59,6 +62,7 @@ export const Doctorrs = () => {
                             <p className='px-2 font-bold'>Name: </p><p className='px-2'>Priya</p>
                             <p className='px-2 font-bold'>Specialist: </p><p className='px-2'>Ear</p>
                             <p className='px-2 font-bold'>Experience: </p><p className='px-2'> 5yrs</p>
+                            <p className='px-2 font-bold'>Ratings: </p><p className='px-2'> 5.0 Stars</p>
                         </div>
                         <p><Link className='bg-green-600 text-white text-center p-2 hover:bg-green-900' to='/book/priya'> Book an Appointment</Link></p>
                     </div>
@@ -71,6 +75,7 @@ export const Doctorrs = () => {
                             <p className='px-2 font-bold'>Name: </p><p className='px-2'>Satheesh</p>
                             <p className='px-2 font-bold'>Specialist: </p><p className='px-2'>Kidney</p>
                             <p className='px-2 font-bold'>Experience: </p><p className='px-2'> 7yrs</p>
+                            <p className='px-2 font-bold'>Ratings: </p><p className='px-2'> 4.1 Stars</p>
 
                         </div>
                         <p><Link className='bg-green-600 text-white text-center p-2 hover:bg-green-900' to='/book/arun' >Book an Appointment</Link></p>
@@ -82,8 +87,9 @@ export const Doctorrs = () => {
                     <div>
                         <div className='grid-cols-2 grid p-1'>
                             <p className='px-2 font-bold'>Name: </p><p className='px-2'>Trisha</p>
-                            <p className='px-2 font-bold'>Specialist: </p><p className='px-2'>Hair</p>
+                            <p className='px-2 font-bold'>Specialist: </p><p className='px-2'>ENT</p>
                             <p className='px-2 font-bold'>Experience: </p><p className='px-2'> 10yrs</p>
+                            <p className='px-2 font-bold'>Ratings: </p><p className='px-2'> 4.1 Stars</p>
 
                         </div>
                         <p><Link className='bg-green-600 text-white text-center p-2 hover:bg-green-900' to='/book/arun' >Book an Appointment</Link></p>

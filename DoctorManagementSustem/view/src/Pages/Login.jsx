@@ -42,6 +42,10 @@ export const Login = () => {
         <div className='bg-green-50 rounded-lg p-12 shadow-md '>
         <div className='bg-white rounded-lg p-12 shadow-md'>
             <form className='' onSubmit={handleSubmit}>
+                                <div className='flex pt-4 items-center justify-center'>
+                <label className='text-3x1' htmlFor="username">Are you New..?</label>
+                <a href="/register" className='ml-2 text-blue-500 hover:underline text-2x1'>Register</a>
+</div>
                 {/* <p className='text-2xl text-center'>View your Doctors...</p>
                 <p className='text-2xl text-center pb-10'>By Login</p> */}
                 <div className='flex gap-3 pt-2'>
@@ -69,6 +73,8 @@ export const Login = () => {
                     {/* <input className='border-[3px] border-green-600 text-white bg-green-500 p-2 text-xl rounded-lg hover:animate-pulse ' type="submit" value="New?Register" /> */}
                 
                 </div>
+
+
                 
             </form>
            
@@ -80,3 +86,4 @@ export const Login = () => {
     </div>
   )
 }
+

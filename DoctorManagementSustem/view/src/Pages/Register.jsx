@@ -41,7 +41,7 @@ export const Register= () => {
         </div>
         
         <div className='p-3 h-screen relative flex justify-center items-center'>
-        <div className='bg-green-50 rounded-lg p-12 shadow-md'>
+        <div className='bg-green-100 rounded-lg p-12 shadow-md'>
         <div className='bg-white rounded-lg p-12 shadow-md'>
             <form className='' onSubmit={handleSubmit}>
                 {/* <p className='text-2xl text-center'>View your Doctors...</p>
